@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ProfileComponent from "./Profile/ProfileComponent";
 
 function App() {
+  const handleName = (fullName) => {
+    alert(`My name is ${fullName}`);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProfileComponent
+      fullName="Wajih Bou Ali"
+      handleName={handleName}
+      bio="Welcome to my BIO"
+      profession="Student"
+    >
+      <img
+        style={{
+          borderRadius: "20px",
+          width: "500px",
+          height: "300px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+        src="https://www.sport.fr/wp-content/uploads/2021/02/Icon_PS_210131_041.jpg"
+        alt="pic"
+      />
+    </ProfileComponent>
   );
 }
 
